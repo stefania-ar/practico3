@@ -33,6 +33,12 @@
                         <input type="text" name="profesora" placeholder="inserte quien esta a cargo">
                         <button type="submit">send</button>
                     </form>
+         <p>Este es el UPDATE de las materias</p>
+        <form action="updateNombre" method="post">
+                    <input type="text" name="nombreMateria" placeholder="inserte nombre materia ">
+                    <button type="submit">send</button>
+                </form>
+
 
     </body>
   </html>

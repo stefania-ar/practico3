@@ -34,7 +34,7 @@ switch ($params[0]) {
     case 'borrar':
         deleteMaterias($params[1]);
     case 'updateNombre':
-        updateNombre($params[1]);
+        updateNombre($params[1],$params[2]);
     default:
         home();
         break;
