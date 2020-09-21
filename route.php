@@ -28,6 +28,13 @@ switch ($params[0]) {
         insertMateria();
         mostrarMaterias();
         break; 
+    case 'mostrarMaterias':
+        mostrarMaterias();
+        break; 
+    case 'borrar':
+        deleteMaterias($params[1]);
+    case 'updateNombre':
+        updateNombre($params[1]);
     default:
         home();
         break;

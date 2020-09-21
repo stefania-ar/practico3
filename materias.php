@@ -21,8 +21,11 @@ function mostrarMaterias(){
     echo "MATERIAS";
     echo "<ul>";
     foreach ($materias as $materia) {
-        echo "<li>".$materia-> nombre . "</li>";
-        echo "<button>"."eliminar"."</button>";
+        $materia->id;
+        echo "<li>".$materia-> nombre."  __________  "; 
+        echo '<button><a href="borrar/'.$materia->id.'"> eliminar</a></button>';
+        echo '<button><a href="updateNombre/'.$materia->id.'"> eliminar</a></button>';
+        echo "</li>";
     }
     echo "</ul>";
 
@@ -36,9 +39,13 @@ function mostrarMaterias(){
     echo "</ul>";
 }
 
-function deleteMaterias(){
+function deleteMaterias($materia_id){
     $db = new PDO('mysql:host=localhost;' .'dbname=ejercicio4y5;charset=utf8' , 'root', '');
-    $sentencia=$db->prepare("DELETE FROM materias WHERE ");
+    $sentencia=$db->prepare("DELETE FROM materias WHERE id=?");
+    echo "hola";
+
+    $sentencia->execute(array($materia_id));
+    header("Location: ".BASE_URL."mostrarMaterias");
 }
 
 
