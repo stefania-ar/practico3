@@ -4,7 +4,6 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 require_once 'base.php';
 require_once 'index.php';
 require_once 'materias.php';
-//require_once 'index.html';
 
 
 if(isset($_GET['action'])){
