@@ -22,12 +22,12 @@ function mostrarMaterias(){
     echo "<ul>";
     foreach ($materias as $materia) {
         $id=$materia->id;
-        $nombre= '';
+        
         echo "<li>".$materia-> nombre."  __________  "; 
         echo '<button><a href="borrar/'.$materia->id.'"> eliminar</a></button>';
-        echo "<form action='updateNombre/$id/$nombreMateria' method='get'>
-        <input type='text' name='nombreMateria' placeholder='inserte nombre materia'>
-        <button type='submit'><a href='updateNombre/$id/:algo'> update</a></button> </form>";
+        echo "<form action='updateNombre/$id' method='post'>
+        <input type='text' name='nombre' placeholder='inserte nombre materia'>
+        <button type='submit'> update</a></button> </form>";
         
         echo "</li>";
     }
@@ -52,9 +52,10 @@ function deleteMaterias($materia_id){
     header("Location: ".BASE_URL."mostrarMaterias");
 }
 
-function updateNombre($materia_id, $nombre){
+function updateNombre($materia_id){
     $db = new PDO('mysql:host=localhost;' .'dbname=ejercicio4y5;charset=utf8' , 'root', '');
-    $nombre= $_GET['nombreMateria'];
+    $nombre= $_POST['nombre'];
+    
     
     $sentencia=$db->prepare("UPDATE materias SET nombre=? WHERE id=?");
     echo "hola";
